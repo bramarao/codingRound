@@ -12,7 +12,8 @@ import java.util.List;
 
 public class FlightBookingTest {
 
-    WebDriver driver = new ChromeDriver();
+    //WebDriver driver = new ChromeDriver(); // old code
+    WebDriver driver = null;  //new code
 
 
     @Test
@@ -80,7 +81,10 @@ public class FlightBookingTest {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
         if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            //System.setProperty("webdriver.chrome.driver", "chromedriver.exe"); old code
+           System.setProperty("webdriver.chrome.driver", "C:\\Users\\nayde01\\git\\automationSystem\\Drivers\\chromedriver.exe");  #<-----------------This is my chrome path
+           driver=new ChromeDriver();
+
         }
         if (PlatformUtil.isLinux()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
